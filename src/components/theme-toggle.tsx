@@ -4,7 +4,7 @@ import * as React from "react"
 import { useTheme } from "next-themes"
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme("dark")
+  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
   // useEffect only runs on the client, so now we can safely show the UI
@@ -19,7 +19,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+      className="rounded-lg bg-gray-900 p-2 hover:bg-gray-800 dark:hover:bg-gray-800"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (

@@ -35,12 +35,12 @@ export default function CategoryPage({ params }: PageProps) {
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-auto">
         {category.products.map((product) => (
           <Link 
             key={product.id}
             href={`/products/${product.id}`}
-            className="group bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+            className="group bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:-translate-y-1 transition-transform duration-300 border border-gray-300 dark:border-gray-600 shadow-gray-300 dark:shadow-gray-600"
           >
             {/* Product Image */}
             <div className="relative aspect-square">

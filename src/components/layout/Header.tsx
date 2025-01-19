@@ -31,7 +31,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-secondary text-white">
+    <header className="sticky top-0 z-50 w-full bg-white dark:bg-secondary  text-white">
       {/* Top Bar */}
       <div className="border-b border-gray-800">
         <div className="container mx-auto px-4">
@@ -89,14 +89,14 @@ export function Header() {
       </div>
 
       {/* Categories Navigation - Desktop */}
-      <nav className="border-b border-gray-800 bg-[#1a1a1a] mx-auto text-center w-full hidden md:block">
+      <nav className="border-b border-gray-800 bg-yellow-900 dark:bg-[#1a1a1a] mx-auto text-center w-full hidden md:block">
         <div className="container mx-auto px-4 ">
           <div className="flex items-center justify-center space-x-8 h-12">
             {allCategories.map((category) => (
               <Link
                 key={category.id}
                 href={`/category/${category.id}`}
-                className="text-lg font-medium text-gray-300 hover:text-yellow-500 transition-colors"
+                className="text-lg font-medium text-white dark:text-white-300 hover:text-yellow-500 transition-colors"
               >
                 {category.name}
               </Link>

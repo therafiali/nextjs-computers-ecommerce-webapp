@@ -25,8 +25,8 @@ export function CategorySection() {
           {allCategories.map((category: Category) => (
             <Link
               key={category.id}
-              href={`/category/${category.name.toLowerCase()}`}
-              className="group relative overflow-hidden rounded-lg bg-white dark:bg-secondary-light shadow-md transition-transform hover:-translate-y-1"
+              href={`/category/${category.id}`}
+              className="group relative overflow-hidden rounded-lg bg-white dark:bg-secondary-light shadow-md transition-transform hover:-translate-y-1 border border-gray-300 dark:border-gray-600 shadow-gray-300 dark:shadow-gray-600"
             >
               <div className="aspect-square relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />

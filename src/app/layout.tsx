@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={`${RubikSans.variable}  antialiased min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
