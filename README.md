@@ -1,4 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
@@ -14,7 +13,7 @@ npm install next-themes
 ### Project Structure
 
 src/
-├── components/     # Reusable UI components
+├── components/     # Reusable UI components ,
 ├── features/       # Feature-specific components and logic
 ├── lib/           # Third-party library configurations
 ├── hooks/         # Custom React hooks
