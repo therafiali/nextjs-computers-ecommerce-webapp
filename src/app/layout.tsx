@@ -15,7 +15,7 @@ const RubikSans = Rubik({
 
 
 export const metadata: Metadata = {
-  title: "ITGO - IT Gadgets Online",
+  title: "H&H Computer",
   description: "Your one-stop shop for IT hardware and networking equipment",
 };
 
