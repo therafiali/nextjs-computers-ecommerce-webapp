@@ -2,35 +2,13 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-
-const categories = [
-  {
-    id: 1,
-    name: 'Laptops',
-    image: '/categories/laptop.jpg',
-    count: '120+ Products',
-  },
-  {
-    id: 2,
-    name: 'Gaming PCs',
-    image: '/categories/gaming-pc.jpg',
-    count: '85+ Products',
-  },
-  {
-    id: 3,
-    name: 'Components',
-    image: '/categories/components.jpg',
-    count: '200+ Products',
-  },
-  {
-    id: 4,
-    name: 'Accessories',
-    image: '/categories/accessories.jpg',
-    count: '150+ Products',
-  },
-]
+import { getCategories, Category } from '@/data/categories'
 
 export function CategorySection() {
+  const allCategories = getCategories()
+  console.log(allCategories)
+
+
   return (
     <section className="py-12 bg-gray-50 dark:bg-secondary">
       <div className="container mx-auto px-4">
@@ -44,7 +22,7 @@ export function CategorySection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {categories.map((category) => (
+          {allCategories.map((category: Category) => (
             <Link
               key={category.id}
               href={`/category/${category.name.toLowerCase()}`}

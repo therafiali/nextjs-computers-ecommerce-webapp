@@ -2,8 +2,38 @@
 
 import { Button } from '../ui/Button'
 import Image from 'next/image'
+import Workstation from '@/assets/workstation/workstation.png'
+import Server from '@/assets/server/servers.png'
+import Switch from '@/assets/switches/cisco.png'
+import SFP from '@/assets/switches/sfp.png'
+import LanCard4 from '@/assets/server/lan-card-4.png'
+import LanCard2 from '@/assets/server/lan-card-2.png'
+import { useState, useEffect } from 'react'
+
+// Add more images here
+const images = [
+  { src: Workstation, alt: "Featured Gaming PC" },
+  { src: Server, alt: "Featured Server" },
+  { src: Switch, alt: "Featured Switch" },
+  { src: SFP, alt: "Featured SFP" },
+  { src: LanCard4, alt: "Featured Lan Card" },
+  { src: LanCard2, alt: "Featured Lan Card" },
+ 
+]
 
 export function HeroSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      )
+    }, 2000) // Change slide every 5 seconds
+
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="relative bg-gradient-to-b from-white to-gray-50 dark:from-secondary dark:to-secondary-dark overflow-hidden">
       <div className="container mx-auto px-4 py-12 md:py-24">
@@ -15,8 +45,7 @@ export function HeroSection() {
               <span className="text-primary">Best Prices</span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Discover the latest in technology with unbeatable deals on laptops, 
-              components, and accessories.
+              Discover the latest in technology with unbeatable deals on Servers, Switches, Workstations, Accessories, and more.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg">Shop Now</Button>
@@ -35,21 +64,38 @@ export function HeroSection() {
                 <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm font-medium">Secure Payment</span>
+                <span className="text-sm font-medium">With Warranty</span>
               </div>
             </div>
           </div>
           
           {/* Image */}
           <div className="relative h-[400px] md:h-[600px]">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-2xl">
-              <Image
-                src="/hero-product.jpg"
-                alt="Featured Gaming PC"
-                fill
-                className="object-contain"
-                priority
-              />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-transparent rounded-2xl">
+              {images.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className={`object-contain transition-opacity duration-500 ${
+                    currentImageIndex === index ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  priority={index === 0}
+                />
+              ))}
+            </div>
+            {/* Navigation dots */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    currentImageIndex === index ? 'bg-primary' : 'bg-gray-400'
+                  }`}
+                  onClick={() => setCurrentImageIndex(index)}
+                />
+              ))}
             </div>
           </div>
         </div>
