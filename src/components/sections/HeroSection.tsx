@@ -45,7 +45,7 @@ export function HeroSection() {
               <span className="text-primary">Best Prices</span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Discover the latest in technology with unbeatable deals on Servers, Switches, Workstations, Accessories, and more.
+              WE SUPPLY ALL KIND OF SERVERS AND NETWORKING SOLUTIONS FOR YOUR ENTERPRISE.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg">Shop Now</Button>
