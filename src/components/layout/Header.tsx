@@ -3,11 +3,14 @@
 import { useState, useEffect, useRef } from "react";
 import { ThemeToggle } from "../theme-toggle";
 import Link from "next/link";
-import { FaWhatsapp } from 'react-icons/fa'
-import { getCategories } from '@/data/categories'
-import { Search } from '../Search'
+import { FaWhatsapp } from "react-icons/fa";
+import { getCategories } from "@/data/categories";
+import { Search } from "../Search";
+import { CiLocationOn } from "react-icons/ci";
+import Logo from "@/assets/logo/primary-logo.png";
+import Image from "next/image";
 
-const allCategories = getCategories()
+const allCategories = getCategories();
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,13 +38,12 @@ export function Header() {
       {/* Top Bar */}
       <div className="border-b border-gray-800">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col">
+          <div className="flex flex-col py-8">
             {/* Top Section */}
-            <div className="flex items-center justify-between h-16">
+            <div className="flex items-center justify-between h-16 ">
               {/* Logo */}
-              <Link href="/" className="flex items-center">
-                <span className="text-2xl font-bold text-yellow-500">H&H Computer</span>
-                
+              <Link href="/" className="flex items-center w-32 md:w-48">
+                <Image src={Logo} alt="Logo" />
               </Link>
 
               {/* Desktop Search Bar */}
@@ -49,30 +51,27 @@ export function Header() {
                 <Search />
               </div>
               <div className="hidden md:flex items-center space-x-4">
-
-<Link
-              href={`http://web.whatsapp.com/send/?phone=923213523966`}
-              target="_blank"
-              className="ml-auto flex items-center space-x-2 text-green-500 hover:text-green-400"
-            >
-              <FaWhatsapp className="w-5 h-5" />
-              <span className="text-sm font-medium">Contact Us</span>
-            </Link>
-            <ThemeToggle />
+                <Link
+                  href={`http://web.whatsapp.com/send/?phone=923213523966`}
+                  target="_blank"
+                  className="ml-auto flex items-center space-x-2 text-green-500 hover:text-green-400"
+                >
+                  <FaWhatsapp className="w-5 h-5" />
+                  <span className="text-sm font-medium">Chat with Us</span>
+                </Link>
+                <ThemeToggle />
               </div>
-
-              
 
               {/* Mobile Actions */}
               <div className="flex md:hidden items-center space-x-4">
                 <ThemeToggle />
-               
+
                 <button
                   ref={buttonRef}
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   className="text-white"
                 >
-                  <span className="text-sm font-medium">MENU</span>
+                  <span className="text-sm text-black dark:text-white font-medium">MENU</span>
                 </button>
               </div>
             </div>
@@ -83,7 +82,6 @@ export function Header() {
             </div>
 
             {/* WhatsApp Contact */}
-      
           </div>
         </div>
       </div>
@@ -101,10 +99,49 @@ export function Header() {
                 {category.name}
               </Link>
             ))}
-          
+            <Link
+              href="/products"
+              className="text-lg font-medium text-white dark:text-white-300 hover:text-yellow-500 transition-colors"
+            >
+              All Products{" "}
+            </Link>
+            <Link
+              href="/contact-us"
+              className="text-lg font-medium text-white dark:text-white-300 hover:text-yellow-500 transition-colors"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       </nav>
+
+      {/* Address Banner */}
+      <div className="bg-yellow-500 overflow-hidden">
+        <div className="py-2 relative">
+          <div className="flex items-center marquee space-x-8">
+            <span className="text-black font-medium flex items-center">
+              <CiLocationOn className="w-5 h-5 mr-2" />
+              Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
+              Tower, Karachi.
+            </span>
+            <span className="text-black font-medium flex items-center">
+              <CiLocationOn className="w-5 h-5 mr-2" />
+              Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
+              Tower, Karachi.
+            </span>
+            <span className="text-black font-medium flex items-center">
+              <CiLocationOn className="w-5 h-5 mr-2" />
+              Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
+              Tower, Karachi.
+            </span>
+            <span className="text-black font-medium flex items-center">
+              <CiLocationOn className="w-5 h-5 mr-2" />
+              Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
+              Tower, Karachi.
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
@@ -132,7 +169,7 @@ export function Header() {
                 className="flex items-center space-x-2 text-green-500 py-2"
               >
                 <FaWhatsapp className="w-5 h-5" />
-                <span>Contact Us</span>
+                <span>Chat with Us</span>
               </Link>
             </div>
           </div>

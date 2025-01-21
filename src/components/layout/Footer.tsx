@@ -9,7 +9,7 @@ const footerLinks = {
     { name: 'Server', href: '/category/server' },
     { name: 'Switch', href: '/category/switch' },
     { name: 'Workstation', href: '/category/workstation' },
-    { name: 'Accessories', href: '/category/accessories' },
+    { name: 'All Products', href: '/products' },
   ],
   // support: [
   //   { name: 'Contact Us', href: '/contact' },
