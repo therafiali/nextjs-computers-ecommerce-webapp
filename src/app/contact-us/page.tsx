@@ -1,28 +1,25 @@
 "use client";
 
-import { useState } from "react";
 import {
   FaWhatsapp,
-  FaPhone,
-  FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import { Button } from "@/components/ui/Button";
+
 import Link from "next/link";
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     email: "",
+//     subject: "",
+//     message: "",
+//   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log(formData);
-  };
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     // Handle form submission
+//     console.log(formData);
+//   };
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950">
@@ -33,8 +30,8 @@ export default function ContactUs() {
             Contact Us
           </h1>
           <p className="mt-4 text-center text-gray-800 max-w-2xl mx-auto">
-            Have questions? We're here to help. Send us a message and we'll
-            respond as soon as possible.
+            {"Have questions? \n We're here to help. Send us a message and we'll respond as soon as possible."}
+         
           </p>
         </div>
       </div>

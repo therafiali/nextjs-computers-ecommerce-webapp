@@ -16,7 +16,7 @@ const RubikSans = Rubik({
 
 export const metadata: Metadata = {
   title: "H&H Computer",
-  description: "Your one-stop shop for IT hardware and networking equipment",
+  description: "WE SUPPLY ALL KIND OF SERVERS AND NETWORKING SOLUTIONS FOR YOUR ENTERPRISE.",
   manifest: '/manifest.json',
   icons: {
     apple: [
