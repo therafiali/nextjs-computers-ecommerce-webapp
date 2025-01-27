@@ -109,7 +109,7 @@ export default function ContactUs() {
                 <h3 className="font-semibold text-gray-900 dark:text-white">
                   Address
                 </h3>
-                <p className="text-black dark:text-white">Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB Tower, Karachi.</p>
+                <p className="text-black dark:text-white">Shop # G-E 50 & Shop # G-E 56, Ground Floor, Techno City Mall, I.I Chundrigar Road Near MCB Tower, Karachi.</p>
               </div>
             </div>
           </div>
@@ -223,7 +223,7 @@ export default function ContactUs() {
                 H&H Computer
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Shop # G-E 56, Techno City Mall,
+                Shop # G-E 50 & Shop # G-E 56 Ground Floor, Techno City Mall,
                 <br />
                 I.I Chundrigar Road Near MCB Tower,
                 <br />

@@ -4,13 +4,22 @@ import { useState, useEffect, useRef } from "react";
 import { ThemeToggle } from "../theme-toggle";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
-import { getCategories } from "@/data/categories";
 import { Search } from "../Search";
 import { CiLocationOn } from "react-icons/ci";
 import Logo from "@/assets/logo/primary-logo.png";
 import Image from "next/image";
 
-const allCategories = getCategories();
+const navigationItems = [
+  { name: "Server", href: "/server" },
+  { name: "Switch", href: "/switch" },
+  { name: "Workstation", href: "/workstation" },
+  { name: "SFP", href: "/sfp" },
+  { name: "Graphic Cards", href: "/graphic-card" },
+  { name: "Ethernet Card", href: "/ethernet-card" },
+  // { name: "Accessories", href: "/accessories" },
+  { name: "All Products", href: "/products" },
+  { name: "Contact Us", href: "/contact-us" },
+];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,7 +80,9 @@ export function Header() {
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   className="text-white"
                 >
-                  <span className="text-sm text-black dark:text-white font-medium">MENU</span>
+                  <span className="text-sm text-black dark:text-white font-medium">
+                    MENU
+                  </span>
                 </button>
               </div>
             </div>
@@ -80,8 +91,6 @@ export function Header() {
             <div className="md:hidden py-3">
               <Search />
             </div>
-
-            {/* WhatsApp Contact */}
           </div>
         </div>
       </div>
@@ -90,58 +99,48 @@ export function Header() {
       <nav className="border-b border-gray-800 bg-yellow-900 dark:bg-[#1a1a1a] mx-auto text-center w-full hidden md:block">
         <div className="container mx-auto px-4 ">
           <div className="flex items-center justify-center space-x-8 h-12">
-            {allCategories.map((category) => (
+            {navigationItems.map((item) => (
               <Link
-                key={category.id}
-                href={`/category/${category.id}`}
+                key={item.href}
+                href={item.href}
                 className="text-lg font-medium text-white dark:text-white-300 hover:text-yellow-500 transition-colors"
               >
-                {category.name}
+                {item.name}
               </Link>
             ))}
-            <Link
-              href="/products"
-              className="text-lg font-medium text-white dark:text-white-300 hover:text-yellow-500 transition-colors"
-            >
-              All Products{" "}
-            </Link>
-            <Link
-              href="/contact-us"
-              className="text-lg font-medium text-white dark:text-white-300 hover:text-yellow-500 transition-colors"
-            >
-              Contact Us
-            </Link>
           </div>
         </div>
       </nav>
 
       {/* Address Banner */}
-      <div className="bg-yellow-500 overflow-hidden">
-        <div className="py-2 relative">
-          <div className="flex items-center marquee space-x-8">
-            <span className="text-black font-medium flex items-center">
-              <CiLocationOn className="w-5 h-5 mr-2" />
-              Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
-              Tower, Karachi.
-            </span>
-            <span className="text-black font-medium flex items-center">
-              <CiLocationOn className="w-5 h-5 mr-2" />
-              Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
-              Tower, Karachi.
-            </span>
-            <span className="text-black font-medium flex items-center">
-              <CiLocationOn className="w-5 h-5 mr-2" />
-              Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
-              Tower, Karachi.
-            </span>
-            <span className="text-black font-medium flex items-center">
-              <CiLocationOn className="w-5 h-5 mr-2" />
-              Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
-              Tower, Karachi.
-            </span>
+      <Link href="/contact-us" >
+        <div className="bg-yellow-500 overflow-hidden">
+          <div className="py-2 relative">
+            <div className="flex items-center marquee space-x-8">
+              <span className="text-black font-medium flex items-center">
+                <CiLocationOn className="w-5 h-5 mr-2" />
+                Shop # G-E 50 & Shop # G-E 56, Ground Floor, Techno City Mall,
+                I.I Chundrigar Road Near MCB Tower, Karachi.
+              </span>
+              <span className="text-black font-medium flex items-center">
+                <CiLocationOn className="w-5 h-5 mr-2" />
+                Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
+                Tower, Karachi.
+              </span>
+              <span className="text-black font-medium flex items-center">
+                <CiLocationOn className="w-5 h-5 mr-2" />
+                Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
+                Tower, Karachi.
+              </span>
+              <span className="text-black font-medium flex items-center">
+                <CiLocationOn className="w-5 h-5 mr-2" />
+                Shop # G-E 56, Techno City Mall, I.I Chundrigar Road Near MCB
+                Tower, Karachi.
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
@@ -152,14 +151,14 @@ export function Header() {
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col space-y-4">
               <div className="flex flex-col space-y-2">
-                {allCategories.map((category) => (
+                {navigationItems.map((item) => (
                   <Link
-                    key={category.id}
-                    href={`/category/${category.id}`}
+                    key={item.href}
+                    href={item.href}
                     className="text-sm font-medium text-gray-300 hover:text-yellow-500 transition-colors py-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {category.name}
+                    {item.name}
                   </Link>
                 ))}
               </div>

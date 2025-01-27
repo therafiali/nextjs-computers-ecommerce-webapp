@@ -8,9 +8,9 @@ export function WhatsAppButton() {
     <>
       {/* Desktop Version */}
       <Link
-        href={`https://web.whatsapp.com/send/?phone=923213523966`}
+        href={`https://web.whatsapp.com/send/?phone=923278458048`}
         target="_blank"
-        className="fixed bottom-6 right-6 z-50 hidden md:flex items-center gap-3 bg-green-500 text-white px-4 py-3 rounded-full hover:bg-green-600 transition-all shadow-lg hover:shadow-xl"
+        className="fixed bottom-20 right-6 z-50 hidden md:flex items-center gap-3 bg-green-500 text-white px-4 py-3 rounded-full hover:bg-green-600 transition-all shadow-lg hover:shadow-xl"
       >
         <FaWhatsapp className="w-6 h-6" />
         <span className="font-medium">Chat with us</span>
@@ -25,7 +25,7 @@ export function WhatsAppButton() {
       </Link>
 
       {/* Need Help Text - Desktop */}
-      <div className="fixed bottom-6 right-48 z-50 hidden md:block">
+      <div className="fixed bottom-20 right-48 z-50 hidden md:block">
         <div className="bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow-lg">
           <p className="text-sm font-medium">Need Help? Chat with us</p>
         </div>

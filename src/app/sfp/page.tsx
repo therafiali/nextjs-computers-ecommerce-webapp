@@ -1,13 +1,13 @@
 "use client"
 
 import Link from 'next/link'
-import { useProducts } from '@/hooks/useProducts'
+import { useSfpProducts } from '@/hooks/useProducts'
 import { ProductCard } from '@/components/products/ProductCard'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 
 
-export default function ProductsPage() {
-  const { products, isLoading, isError } = useProducts()
+export default function SfpPage() {
+  const { products, isLoading, isError } = useSfpProducts()
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -15,13 +15,13 @@ export default function ProductsPage() {
       <div className="flex items-center space-x-2 text-sm mb-8">
         <Link href="/" className="text-gray-500 hover:text-primary">Home</Link>
         <span className="text-gray-500">/</span>
-        <span className="text-gray-900 dark:text-white">All Products</span>
+        <span className="text-gray-900 dark:text-white">SFP Modules</span>
       </div>
 
       {/* Page Header */}
       <div className="text-center mb-12">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">All Products</h1>
-        <p className="text-gray-600 dark:text-gray-300">Browse our complete collection of products</p>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">SFP Modules</h1>
+        <p className="text-gray-600 dark:text-gray-300">Browse our collection of high-quality SFP modules and transceivers</p>
       </div>
 
       {/* Loading State */}
@@ -34,7 +34,7 @@ export default function ProductsPage() {
       {/* Error State */}
       {isError && (
         <div className="text-center text-red-600 dark:text-red-400 min-h-[400px] flex items-center justify-center">
-          <p>Failed to load products. Please try again later.</p>
+          <p>Failed to load SFP modules. Please try again later.</p>
         </div>
       )}
 

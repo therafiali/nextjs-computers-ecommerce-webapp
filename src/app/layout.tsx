@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+"use client"
+
 import { Rubik } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -6,6 +7,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
+import { usePathname } from 'next/navigation'
 
 const RubikSans = Rubik({
   variable: "--font-rubik",
@@ -14,18 +16,24 @@ const RubikSans = Rubik({
 });
 
 
-export const metadata: Metadata = {
-  title: "H&H Computer",
-  description: "WE SUPPLY ALL KIND OF SERVERS AND NETWORKING SOLUTIONS FOR YOUR ENTERPRISE.",
-  manifest: '/manifest.json',
-  icons: {
-    apple: [
-      { url: '/icons/icon-192x192.png' },
-      { url: '/icons/icon-512x512.png', sizes: '512x512' }
-    ]
-  },
-  themeColor: '#FFB800'
-};
+
+function MainLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isStudioPage = pathname?.startsWith('/studio');
+
+  if (isStudioPage) {
+    return <>{children}</>;
+  }
+
+  return (
+    <>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+      <WhatsAppButton />
+    </>
+  );
+}
 
 export default function RootLayout({
   children,
@@ -56,10 +64,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <WhatsAppButton />
+          <MainLayout>{children}</MainLayout>
           <div className="fixed top-4 right-4">
             <ThemeToggle />
           </div>
