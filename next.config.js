@@ -128,7 +128,8 @@ const withPWA = require('next-pwa')({
 const nextConfig = {
   images: {
     unoptimized: true
-  }
+  },
+  output: 'export',
 }
 
 module.exports = withPWA(nextConfig) 

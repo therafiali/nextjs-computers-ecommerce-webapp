@@ -1,21 +1,27 @@
-"use client"
-
 import { ProductDetails } from '@/components/products/ProductDetails'
-import { use } from 'react'
+import { sanityClient } from '@/lib/sanity'
 
-type PageProps = {
-  params: Promise<{
-    id: string
-  }>,
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+export async function generateStaticParams() {
+  const products = await sanityClient.fetch<Array<{ _id: string }>>(`
+    *[_type == "product" && category->name == "graphic-card"] {
+      _id
+    }
+  `)
+  
+  return products.map((product) => ({
+    id: product._id,
+  }))
 }
 
-export default function ProductPage({ params }: PageProps) {
-  const resolvedParams = use(params)
+type Props = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
+export default async function Page({ params }: Props) {
   return (
     <div className="container mx-auto px-4 py-8">
-      <ProductDetails productId={resolvedParams.id} />
+      <ProductDetails productId={params.id} />
     </div>
   )
 } 

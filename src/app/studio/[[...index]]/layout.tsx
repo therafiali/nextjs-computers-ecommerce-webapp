@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Admin Studio | H&H Computers',
-  description: 'Content Management Studio for H&H Computers',
+  title: 'Admin Studio | HH Computerss',
+  description: 'Content Management Studio for HH Computerss',
 }
 
 export default function StudioLayout({

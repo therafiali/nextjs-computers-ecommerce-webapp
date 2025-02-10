@@ -51,8 +51,8 @@ export function Header() {
             {/* Top Section */}
             <div className="flex items-center justify-between h-16 ">
               {/* Logo */}
-              <Link href="/" className="flex items-center w-32 md:w-48">
-                <Image src={Logo} alt="Logo" />
+              <Link href="/" className="flex items-center my-2">
+                <Image src={'/hhcomputers.png'} className="bg-transparent" alt="Logo" height={300 } width={300 } />
               </Link>
 
               {/* Desktop Search Bar */}

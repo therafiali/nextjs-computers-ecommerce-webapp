@@ -1,7 +1,7 @@
-"use client"
 
 import { ProductDetails } from '@/components/products/ProductDetails'
 import { use } from 'react'
+import { sanityClient } from '@/lib/sanity'
 
 type PageProps = {
   params: Promise<{
@@ -10,7 +10,21 @@ type PageProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default function ProductPage({ params }: PageProps) {
+// Generate static params for switch products
+export async function generateStaticParams() {
+  const products = await sanityClient.fetch(`
+    *[_type == "product" && category->name == "SFP"] {
+      _id
+    }
+  `)
+  
+  return products.map((product: { _id: string }) => ({
+    id: product._id,
+  }))
+}
+
+// Page component
+export default function SfpProductPage({ params }: PageProps) {
   const resolvedParams = use(params)
 
   return (

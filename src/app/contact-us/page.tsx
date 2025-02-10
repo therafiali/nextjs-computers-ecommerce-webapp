@@ -220,7 +220,7 @@ export default function ContactUs() {
             </div>
             <div className="mt-4">
               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                H&H Computer
+                HH Computers
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Shop # G-E 50 & Shop # G-E 56 Ground Floor, Techno City Mall,

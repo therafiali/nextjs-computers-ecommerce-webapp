@@ -1,17 +1,29 @@
-"use client"
-
 import { ProductDetails } from '@/components/products/ProductDetails'
-import { use } from 'react'
+import { sanityClient } from '@/lib/sanity'
 
-type PageProps = {
+interface PageProps {
   params: Promise<{
     id: string
-  }>,
+  }>
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default function ProductPage({ params }: PageProps) {
-  const resolvedParams = use(params)
+// Generate static params for graphic card products
+export async function generateStaticParams() {
+  const products = await sanityClient.fetch(`
+    *[_type == "product" && category->name == "Ethernet Card"] {
+      _id
+    }
+  `)
+  
+  return products.map((product: { _id: string }) => ({
+    id: product._id,
+  }))
+}
+
+// Page component
+export default async function EthernetCardProductPage({ params }: PageProps) {
+  const resolvedParams = await params
 
   return (
     <div className="container mx-auto px-4 py-8">
