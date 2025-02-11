@@ -1,25 +1,22 @@
 "use client";
 
-import {
-  FaWhatsapp,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 
 import Link from "next/link";
 
 export default function ContactUs() {
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     email: "",
-//     subject: "",
-//     message: "",
-//   });
+  //   const [formData, setFormData] = useState({
+  //     name: "",
+  //     email: "",
+  //     subject: "",
+  //     message: "",
+  //   });
 
-//   const handleSubmit = (e: React.FormEvent) => {
-//     e.preventDefault();
-//     // Handle form submission
-//     console.log(formData);
-//   };
+  //   const handleSubmit = (e: React.FormEvent) => {
+  //     e.preventDefault();
+  //     // Handle form submission
+  //     console.log(formData);
+  //   };
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950">
@@ -30,8 +27,9 @@ export default function ContactUs() {
             Contact Us
           </h1>
           <p className="mt-4 text-center text-gray-800 max-w-2xl mx-auto">
-            {"Have questions? \n We're here to help. Send us a message and we'll respond as soon as possible."}
-         
+            {
+              "Have questions? \n We're here to help. Send us a message and we'll respond as soon as possible."
+            }
           </p>
         </div>
       </div>
@@ -41,26 +39,12 @@ export default function ContactUs() {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-12">
           {/* WhatsApp */}
 
-
           {/* Phone */}
-          <Link   href="https://web.whatsapp.com/send/?phone=923213523966&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:border-yellow-500 dark:hover:border-yellow-500 transition-colors">
-              <div className="flex items-center space-x-4">
-                <div className="bg-green-500 p-3 rounded-full">
-                <FaWhatsapp className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white">
-                    Phone
-                  </h3>
-                 
-                    +92 321 3523966
-              
-                </div>
-              </div>
-            </div>
-          </Link>
-          <Link   href="https://web.whatsapp.com/send/?phone=923278458048&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://web.whatsapp.com/send/?phone=923213523966&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:border-yellow-500 dark:hover:border-yellow-500 transition-colors">
               <div className="flex items-center space-x-4">
                 <div className="bg-green-500 p-3 rounded-full">
@@ -70,16 +54,33 @@ export default function ContactUs() {
                   <h3 className="font-semibold text-gray-900 dark:text-white">
                     Phone
                   </h3>
-                 
+                  +92 321 3523966
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link
+            href="https://web.whatsapp.com/send/?phone=923278458048&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:border-yellow-500 dark:hover:border-yellow-500 transition-colors">
+              <div className="flex items-center space-x-4">
+                <div className="bg-green-500 p-3 rounded-full">
+                  <FaWhatsapp className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    Phone
+                  </h3>
                   +92 327 8458048
-              
                 </div>
               </div>
             </div>
           </Link>
 
           {/* Email */}
-          {/* <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:border-yellow-500 dark:hover:border-yellow-500 transition-colors">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:border-yellow-500 dark:hover:border-yellow-500 transition-colors">
             <div className="flex items-center space-x-4">
               <div className="bg-blue-500 p-3 rounded-full">
                 <FaEnvelope className="w-6 h-6 text-white" />
@@ -89,30 +90,37 @@ export default function ContactUs() {
                   Email
                 </h3>
                 <a
-                  href="mailto:support@h&hcomputer.com"
+                  href="mailto:hhcomputersshop@gmail.com"
                   className="text-blue-500 hover:text-blue-600"
                 >
-                  support@h&hcomputer.com
+                  hhcomputersshop@gmail.com{" "}
                 </a>
               </div>
             </div>
-          </div> */}
+          </div>
 
           {/* Address */}
-          <Link href="https://www.google.com/maps/place/Techno+City+Mall/@24.8508129,67.0076902,17z/data=!3m1!4b1!4m6!3m5!1s0x3eb33e06624e4669:0x1b2d0b4eb5f62a96!8m2!3d24.8508129!4d67.0076902!16s%2Fg%2F11c305650d?entry=ttu" target="_blank" rel="noopener noreferrer">  
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:border-yellow-500 dark:hover:border-yellow-500 transition-colors">
-            <div className="flex items-center space-x-4">
-              <div className="bg-blue-500 p-3 rounded-full">
-                <FaMapMarkerAlt className="w-6 h-6 text-black dark:text-white" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white">
-                  Address
-                </h3>
-                <p className="text-black dark:text-white">Shop # G-E 50 & Shop # G-E 56, Ground Floor, Techno City Mall, I.I Chundrigar Road Near MCB Tower, Karachi.</p>
+          <Link
+            href="https://www.google.com/maps/place/Techno+City+Mall/@24.8508129,67.0076902,17z/data=!3m1!4b1!4m6!3m5!1s0x3eb33e06624e4669:0x1b2d0b4eb5f62a96!8m2!3d24.8508129!4d67.0076902!16s%2Fg%2F11c305650d?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:border-yellow-500 dark:hover:border-yellow-500 transition-colors">
+              <div className="flex items-center space-x-4">
+                <div className="bg-blue-500 p-3 rounded-full">
+                  <FaMapMarkerAlt className="w-6 h-6 text-black dark:text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    Address
+                  </h3>
+                  <p className="text-black dark:text-white">
+                    Shop # G-E 50 & Shop # G-E 56, Ground Floor, Techno City
+                    Mall, I.I Chundrigar Road Near MCB Tower, Karachi.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
           </Link>
         </div>
 

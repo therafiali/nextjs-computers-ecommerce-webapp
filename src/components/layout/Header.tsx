@@ -6,7 +6,6 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 import { Search } from "../Search";
 import { CiLocationOn } from "react-icons/ci";
-import Logo from "@/assets/logo/primary-logo.png";
 import Image from "next/image";
 
 const navigationItems = [
