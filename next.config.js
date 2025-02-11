@@ -135,6 +135,17 @@
 // module.exports = withPWA(nextConfig) 
 
 
-module.exports = { typescript: { ignoreBuildErrors: true }, eslint: { ignoreDuringBuilds: true }
+module.exports = { typescript: { ignoreBuildErrors: true }, eslint: { ignoreDuringBuilds: true },
+images: {
+  remotePatterns: [
+    {
+      protocol: 'https',
+      hostname: 'cdn.sanity.io',
+      port: '',
+      pathname: '/images/nnwy101k/production/**',
+      search: '',
+    },
+  ],
+},
 
 }
