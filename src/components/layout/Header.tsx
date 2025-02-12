@@ -60,7 +60,7 @@ export function Header() {
               </div>
               <div className="hidden md:flex items-center space-x-4">
                 <Link
-                  href={`http://web.whatsapp.com/send/?phone=923213523966`}
+                  href={`whatsapp://send?phone=923278458048`}
                   target="_blank"
                   className="ml-auto flex items-center space-x-2 text-green-500 hover:text-green-400"
                 >
