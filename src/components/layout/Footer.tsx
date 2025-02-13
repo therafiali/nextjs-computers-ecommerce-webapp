@@ -54,10 +54,10 @@ export function Footer() {
 
         {/* Social Media Icons */}
         <div className="flex justify-center sm:justify-start gap-4 mt-8">
-          <Link href="https://www.facebook.com/profile.php?id=61573011811882" target="_blank" className="text-blue-600 dark:text-gray-300 hover:text-blue-600">
+          <Link href="https://www.facebook.com/profile.php?id=61572989672036" target="_blank" className="text-blue-600 dark:text-gray-300 hover:text-blue-600">
             <Facebook size={30} color="white" className="bg-blue-500 rounded-md p-1" />
           </Link>
-          <Link href="https://instagram.com" target="_blank" className="text-gray-600 dark:text-gray-300 hover:text-pink-600">
+          <Link href="https://www.instagram.com/hhcomputersshop/" target="_blank" className="text-gray-600 dark:text-gray-300 hover:text-pink-600">
             <Instagram size={30} color="white" className="bg-pink-500 rounded-md p-1" />
           </Link>
           <Link href="https://wa.me/923278458048" target="_blank" className="text-gray-600 dark:text-gray-300 hover:text-green-500">
