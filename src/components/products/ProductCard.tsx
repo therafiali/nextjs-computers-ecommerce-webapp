@@ -24,7 +24,7 @@ export function ProductCard({ product }: ProductCardProps) {
           src={imageUrl}
           alt={product.name}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          className="group-hover:scale-110 transition-transform duration-300"
         />
       </div>
 
