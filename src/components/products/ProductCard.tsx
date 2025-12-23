@@ -7,6 +7,7 @@ interface ProductCardProps {
   product: Product;
 }
 
+
 export function ProductCard({ product }: ProductCardProps) {
   // Safely handle image URL
   const imageUrl = product.images && product.images[0]?.asset 
