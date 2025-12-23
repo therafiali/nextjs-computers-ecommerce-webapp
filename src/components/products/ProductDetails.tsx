@@ -99,7 +99,7 @@ export function ProductDetails({ productId }: ProductDetailsProps) {
               src={urlForImage(product.images[0].asset).url()}
               alt={product.name}
               fill
-              className="object-cover"
+              className=""
             />
           )}
         </div>
