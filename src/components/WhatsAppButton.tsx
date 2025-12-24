@@ -18,7 +18,7 @@ export function WhatsAppButton() {
 
       {/* Mobile Version */}
       <Link
-        href={`whatsapp://send?phone=923278458048`}
+        href={`whatsapp://send?phone=03009224816`}
         className="fixed bottom-4 right-4 z-50 md:hidden bg-green-500 text-white p-4 rounded-full hover:bg-green-600 transition-all shadow-lg hover:shadow-xl"
       >
         <FaWhatsapp className="w-6 h-6" />
