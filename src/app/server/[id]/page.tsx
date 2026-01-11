@@ -1,35 +1,35 @@
 
-import { ProductDetails } from '@/components/products/ProductDetails'
-import { use } from 'react'
-import { sanityClient } from '@/lib/sanity'
+// import { ProductDetails } from '@/components/products/ProductDetails'
+// import { use } from 'react'
+// import { sanityClient } from '@/lib/sanity'
 
-type PageProps = {
-  params: Promise<{
-    id: string
-  }>,
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-}
+// type PageProps = {
+//   params: Promise<{
+//     id: string
+//   }>,
+//   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+// }
 
-// Generate static params for switch products
-export async function generateStaticParams() {
-  const products = await sanityClient.fetch(`
-    *[_type == "product" && category->name == "Server"] {
-      _id
-    }
-  `)
+// // Generate static params for switch products
+// export async function generateStaticParams() {
+//   const products = await sanityClient.fetch(`
+//     *[_type == "product" && category->name == "Server"] {
+//       _id
+//     }
+//   `)
   
-  return products.map((product: { _id: string }) => ({
-    id: product._id,
-  }))
-}
+//   return products.map((product: { _id: string }) => ({
+//     id: product._id,
+//   }))
+// }
 
-// Page component
-export default function ServerProductPage({ params }: PageProps) {
-  const resolvedParams = use(params)
+// // Page component
+// export default function ServerProductPage({ params }: PageProps) {
+//   const resolvedParams = use(params)
 
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <ProductDetails productId={resolvedParams.id} />
-    </div>
-  )
-} 
+//   return (
+//     <div className="container mx-auto px-4 py-8"> heelo
+//       <ProductDetails productId={resolvedParams.id} />
+//     </div>
+//   )
+// } 

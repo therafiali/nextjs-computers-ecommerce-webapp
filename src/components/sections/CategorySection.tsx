@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from 'react'
-import { sanityClient } from '@/lib/sanity'
-import { urlForImage } from '@/lib/sanity'
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { useEffect, useState } from "react";
+import { sanityClient } from "@/lib/sanity";
+import { urlForImage } from "@/lib/sanity";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface CategoryProduct {
-  _id: string
-  name: string
+  _id: string;
+  name: string;
   category: {
-    _id: string
-    name: string
+    _id: string;
+    name: string;
     slug: {
-      current: string
-    }
-  }
-  price: number
+      current: string;
+    };
+  };
+  price: number;
   images: Array<{
     asset: {
-      _ref: string
-    }
-  }>
+      _ref: string;
+    };
+  }>;
 }
 
 export function CategorySection() {
-  const [products, setProducts] = useState<CategoryProduct[]>([])
-  const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState<CategoryProduct[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchCategoryProducts = async () => {
@@ -45,40 +45,31 @@ export function CategorySection() {
               slug
             }
           }
-        }.product`
-        
-        const result = await sanityClient.fetch(query)
-        setProducts(result.filter(Boolean)) // Remove any null values
+        }.product`;
+
+        const result = await sanityClient.fetch(query);
+        console.log("result", result);
+        setProducts(result.filter(Boolean)); // Remove any null values
       } catch (error) {
-        console.error('Error fetching category products:', error)
+        console.error("Error fetching category products:", error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
 
-    fetchCategoryProducts()
-  }, [])
-
-  // Function to get the category URL
-  const getCategoryUrl = (categoryName: string): string => {
-    const categoryMap: { [key: string]: string } = {
-      'Server': '/server',
-      'Switch': '/switch',
-      'Workstation': '/workstation',
-      'SFP': '/sfp',
-      'Graphic Card': '/graphic-card',
-      'Ethernet Card': '/ethernet-card',
-      'Accessories': '/accessories'
-    }
-    return categoryMap[categoryName] || `/${categoryName.toLowerCase()}`
-  }
+    fetchCategoryProducts();
+  }, []);
 
   if (loading) {
-    return <div className="min-h-[400px] flex items-center justify-center">Loading...</div>
+    return (
+      <div className="min-h-[400px] flex items-center justify-center">
+        Loading...
+      </div>
+    );
   }
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section id="categories" className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -97,7 +88,7 @@ export function CategorySection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Link href={getCategoryUrl(product.category.name)}>
+              <Link href={`/category/${product.category.slug.current}`}>
                 <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                   {product.images?.[0] && (
                     <div className="relative h-48 overflow-hidden">
@@ -155,5 +146,5 @@ export function CategorySection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
