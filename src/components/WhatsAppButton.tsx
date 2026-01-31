@@ -8,7 +8,7 @@ export function WhatsAppButton() {
     <>
       {/* Desktop Version */}
       <Link
-        href={`https://web.whatsapp.com/send/?phone=923009224816&text&type=phone_number&app_absent=0`}
+        href={`https://web.whatsapp.com/send/?phone=923209267618&text&type=phone_number&app_absent=0`}
         target="_blank"
         className="fixed bottom-20 right-6 z-50 hidden md:flex items-center gap-3 bg-green-500 text-white px-4 py-3 rounded-full hover:bg-green-600 transition-all shadow-lg hover:shadow-xl"
       >
@@ -18,7 +18,7 @@ export function WhatsAppButton() {
 
       {/* Mobile Version */}
       <Link
-        href={`https://wa.me/923009224816`}
+        href={`https://wa.me/923209267618`}
         className="fixed bottom-4 right-4 z-50 md:hidden bg-green-500 text-white p-4 rounded-full hover:bg-green-600 transition-all shadow-lg hover:shadow-xl"
       >
         <FaWhatsapp className="w-6 h-6" />
