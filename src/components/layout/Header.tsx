@@ -104,7 +104,7 @@ export function Header() {
               {/* Mobile/Tablet Actions */}
               <div className="flex lg:hidden items-center space-x-2 sm:space-x-3 flex-shrink-0">
                 <Link
-                  href={`https://wa.me/923278458048`}
+                  href={`https://wa.me/923209267618`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-green-500 hover:text-green-400 transition-colors"
