@@ -41,7 +41,7 @@ export default function ContactUs() {
 
           {/* Phone */}
           <Link
-            href="https://web.whatsapp.com/send/?phone=923213523966&text&type=phone_number&app_absent=0"
+            href="https://web.whatsapp.com/send/?phone=923209267618&text&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -54,7 +54,7 @@ export default function ContactUs() {
                   <h3 className="font-semibold text-gray-900 dark:text-white">
                     Phone
                   </h3>
-                  +92 321 3523966
+                  +92 320 926 7618
                 </div>
               </div>
             </div>
