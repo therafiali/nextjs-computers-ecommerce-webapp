@@ -42,7 +42,29 @@ export function Footer() {
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
               <p className="flex items-center space-x-2">
                 <CiLocationOn size={25} />
-                <span>Shop # G-E 56, Techno City Mall, Karachi.</span>
+                <span>Shop # M-63, Odean Center, Saddar Karachi.</span>
+              </p>
+              <p className="flex items-center space-x-2">
+                <FaWhatsapp size={20} />
+                <Link
+                  href="https://wa.me/923209267618"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-green-500 transition-colors"
+                >
+                  M.Ali - +92 320 926 7618
+                </Link>
+              </p>
+              <p className="flex items-center space-x-2">
+                <FaWhatsapp size={20} />
+                <Link
+                  href="https://wa.me/923278458048"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-green-500 transition-colors"
+                >
+                  Durr-e-Hassan - +92 327 845 8048
+                </Link>
               </p>
               <p className="flex items-center space-x-2">
                 <Mail size={20} />

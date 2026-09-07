@@ -173,8 +173,7 @@ export function Header() {
               {[...Array(4)].map((_, i) => (
                 <span key={i} className="text-black font-medium flex items-center text-xs sm:text-sm whitespace-nowrap">
                   <CiLocationOn className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
-                  Shop # G-E 50 & Shop # G-E 56, Ground Floor, Techno City Mall,
-                  I.I Chundrigar Road Near MCB Tower, Karachi.
+                  Shop # M-63, Odean Center, Saddar Karachi.
                 </span>
               ))}
             </div>

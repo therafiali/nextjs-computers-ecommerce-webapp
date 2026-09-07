@@ -52,7 +52,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">
-                    Phone
+                    M.Ali
                   </h3>
                   +92 320 926 7618
                 </div>
@@ -71,9 +71,9 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">
-                    Phone
+                    Durr-e-Hassan
                   </h3>
-                  +92 327 8458048
+                  +92 327 845 8048
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function ContactUs() {
 
           {/* Address */}
           <Link
-            href="https://www.google.com/maps/place/Techno+City+Mall/@24.8508129,67.0076902,17z/data=!3m1!4b1!4m6!3m5!1s0x3eb33e06624e4669:0x1b2d0b4eb5f62a96!8m2!3d24.8508129!4d67.0076902!16s%2Fg%2F11c305650d?entry=ttu"
+            href="https://www.google.com/maps/search/?api=1&query=Odean+Center+Saddar+Karachi"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -115,8 +115,7 @@ export default function ContactUs() {
                     Address
                   </h3>
                   <p className="text-black dark:text-white">
-                    Shop # G-E 50 & Shop # G-E 56, Ground Floor, Techno City
-                    Mall, I.I Chundrigar Road Near MCB Tower, Karachi.
+                    Shop # M-63, Odean Center, Saddar Karachi.
                   </p>
                 </div>
               </div>
@@ -217,7 +216,7 @@ export default function ContactUs() {
             </h2>
             <div className="aspect-square w-full rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3620.381609675563!2d67.0076902!3d24.850812899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x3eb33e06624e4669%3A0x1b2d0b4eb5f62a96!2sTechno%20City%20Corporate%20Tower%2C%20New%20Chali%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh!3m2!1d24.850812899999998!2d67.0076902!5e0!3m2!1sen!2s!4v1737467358550!5m2!1sen!2s"
+                src="https://maps.google.com/maps?q=Odean+Center,+Saddar,+Karachi&z=17&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -231,11 +230,9 @@ export default function ContactUs() {
                 HH Computers
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Shop # G-E 50 & Shop # G-E 56 Ground Floor, Techno City Mall,
+                Shop # M-63, Odean Center,
                 <br />
-                I.I Chundrigar Road Near MCB Tower,
-                <br />
-                Karachi, Pakistan
+                Saddar Karachi.
               </p>
             </div>
           </div>
